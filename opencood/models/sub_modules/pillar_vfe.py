@@ -6,7 +6,7 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 
-
+# 通过对点云进行柱状体特征编码，生成用于后续处理的特征表示
 class PFNLayer(nn.Module):
     def __init__(self,
                  in_channels,

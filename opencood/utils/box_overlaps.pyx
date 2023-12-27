@@ -7,7 +7,7 @@
 
 import numpy as np
 cimport numpy as np
-from cython.parallel import prange, parallel
+# from cython.parallel import prange, parallel
 
 
 DTYPE = np.float32

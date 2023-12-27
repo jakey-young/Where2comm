@@ -1,7 +1,7 @@
 import torch
 import torch.nn as nn
 
-
+# 将柱状体特征映射回原始的三维空间，形成一个二维的特征图。在这个特征图中，y 轴对应于图像的高度，x 轴对应于图像的宽度，因此整体效果类似于将点云数据进行了90度的顺时针旋转
 class PointPillarScatter(nn.Module):
     def __init__(self, model_cfg):
         super().__init__()

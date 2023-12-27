@@ -157,6 +157,8 @@ def main():
                     if len(output_dict) > 2:
                         single_loss_v = criterion(output_dict, batch_data['ego']['label_dict_single_v'], prefix='_single_v')
                         single_loss_i = criterion(output_dict, batch_data['ego']['label_dict_single_i'], prefix='_single_i')
+                        # single_loss_v = criterion(output_dict, batch_data['ego']['label_dict'], prefix='_single_v')
+                        # single_loss_i = criterion(output_dict, batch_data['ego']['label_dict'], prefix='_single_i')
                         final_loss += single_loss_v + single_loss_i
 
                         if 'fusion_args' in hypes['model']['args']:
@@ -184,7 +186,7 @@ def main():
     run_test = True
     if run_test:
         fusion_method = opt.fusion_method
-        cmd = f"python /GPFS/data/yhu/code/OpenCOOD/opencood/tools/inference.py --model_dir {saved_path} --fusion_method {fusion_method}"
+        cmd = f"python /home/why/YJQ/Where2comm/opencood/tools/inference.py --model_dir {saved_path} --fusion_method {fusion_method}"
         print(f"Running command: {cmd}")
         os.system(cmd)
 
